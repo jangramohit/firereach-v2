@@ -50,10 +50,7 @@ Write a highly personalized cold email utilizing the following structure:
 2. Problem: Highlight a specific challenge Software Development Engineers face related to that trigger.
 3. Value: Emphasize how our agentic AI and LLM applications can massively boost developer productivity and solve that problem.
 4. CTA: End with a short, soft call to action for a 15-minute meeting.
-5. The Sign-off: End the email strictly with exactly this text: 
-"Best,
-
-Mohit"
+5. The Sign-off: End the email strictly with "Best Regards,\\n\\nMohit". Do not use any other name or sign-off.
 
 NON-NEGOTIABLE CONSTRAINTS:
 - Length: The email MUST be between 80 and 120 words. Not too short, not too long.
@@ -62,6 +59,6 @@ NON-NEGOTIABLE CONSTRAINTS:
 - Note on Variations: Generate ONE absolute best, highly targeted variation so it can be sent instantly.
 - Output: ONLY a valid JSON object with EXACTLY two string fields: "subject" and "body". Do not wrap in markdown block quotes (```json) or add explanations.
 
-JSON SCHEMA REQUIREMENT:
-{{"subject": "A compelling, natural subject line referencing their AI initiatives or engineering team", "body": "The formatted text body of the email with appropriate line breaks (\\n\\n) ending with the exact Sign-off"}}
+    "body": "The formatted text body of the email with appropriate line breaks (\\\\n\\\\n) ending with best regards and Mohit"
+}}
 """
