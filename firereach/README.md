@@ -70,30 +70,19 @@ FireReach is an autonomous AI Sales Development Representative (SDR) system. It 
 
 ## Deployment
 
-### Deploying the Backend (Render)
-We recommend deploying the FastAPI backend using Render's Web Services.
+I attempted to deploy this project live using **Vercel** (for the Vite frontend) and **Render** (for the FastAPI backend), but encountered some configuration issues that prevented a successful live build.
 
-1. Go to the [Render Dashboard](https://dashboard.render.com).
-2. Create a new **Web Service**.
-3. Connect your GitHub repository.
-4. Keep the **Root Directory** empty.
-5. **Build Command**: `pip install -r backend/requirements.txt`
-6. **Start Command**: `uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT`
-7. Add all necessary [Environment Variables](#environment-variables) in the Render dashboard. Make sure to also add `PYTHON_VERSION` with the value `3.10.12`.
+_If you'd like to attempt deployment, you can try following standard Vite/FastAPI hosting guides for those platforms._
 
-### Deploying the Frontend (Vercel)
-The Vite React app is optimized for Vercel deployment.
+### Screenshots / Images
 
-1. Once your backend is live on Render, copy its public URL.
-2. Update the `axios.post` URL in `frontend/src/App.jsx` to point to your live Render backend URL.
-3. Commit and push this change to GitHub.
-4. Go to the [Vercel Dashboard](https://vercel.com).
-5. Import your GitHub repository.
-6. Set the **Framework Preset** to Vite.
-7. Set the **Root Directory** to `frontend`.
-8. Click Deploy!
+If you want to add images of the application running locally to this README, you can place your image files (e.g., `dashboard.png`) directly into this repository folder and embed them using the following format:
 
----
+```markdown
+![Dashboard View](./dashboard.png)
+![Running Server](./server-log.jpg)
+```
+
 
 ## Environment Variables
 
