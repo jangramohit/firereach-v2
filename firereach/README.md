@@ -28,26 +28,19 @@ An autonomous AI SDR system that takes a single prompt (Ideal Customer Profile),
 
 ---
 
-## Deployment Instructions
-
 ### Deploying the Backend (Render / Railway)
 
 **Render**
 1. Create a new **Web Service**.
-2. Connect your GitHub repository linking to the `backend` folder as the root.
-3. Build Command: `pip install -r requirements.txt`
-4. Start Command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-5. Add all Environment Variables matching your `.env` file to the Render dashboard.
+2. Connect your GitHub repository: `https://github.com/jangramohit/firereach-v2.git`
+3. Set **Root Directory** to `firereach/backend`.
+4. **Build Command**: `pip install -r requirements.txt`
+5. **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+6. Add Environment Variables: `GEMINI_API_KEY`, `SMTP_PASSWORD`, etc.
 
-**Railway**
-1. Create a new project and select "Deploy from Github repo".
-2. Set the Root Directory to `/backend`.
-3. Railway will auto-detect Python. 
-4. Add your Environment variables in the Railway settings.
-
-### Deploying the Frontend (Vercel / Render / Netlify)
-You can deploy the Vite React app easily on any static host.
-1. Root directory: `/frontend`
-2. Build command: `npm run build`
-3. Output directory: `dist`
-4. Make sure to update the `axios.post` URL in `src/App.jsx` to point to your live backend URL before deploying.
+### Deploying the Frontend (Vercel / Netlify)
+1. Import the repository in Vercel.
+2. Set **Root Directory** to `firereach/frontend`.
+3. Vercel will auto-detect Vite.
+4. Add **Environment Variable**: `VITE_API_URL` set to your live Render backend URL.
+5. Deploy!

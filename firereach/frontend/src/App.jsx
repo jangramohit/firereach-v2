@@ -27,7 +27,8 @@ function App() {
       if (targetEmail.trim()) {
         payload.target_email = targetEmail.trim()
       }
-      const response = await axios.post('http://localhost:8000/run-outreach', payload)
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+      const response = await axios.post(`${apiUrl}/run-outreach`, payload)
       setResult(response.data)
     } catch (err) {
       setError(err.response?.data?.detail || err.message || 'Failed to run the outreach engine')
