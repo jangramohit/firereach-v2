@@ -4,8 +4,6 @@
 
 I attempted to deploy this project live using **Vercel** (for the Vite frontend) and **Render** (for the FastAPI backend), but encountered some configuration issues that prevented a successful live build.
 
-_If you'd like to attempt deployment, you can try following standard Vite/FastAPI hosting guides for those platforms._
-
 ### Screenshots / Images
 
 If you want to add images of the application running locally to this README, you can place your image files (e.g., `dashboard.png`) directly into this repository folder and embed them using the following format:
