@@ -1,5 +1,3 @@
-
-
 ## Deployment
 
 I attempted to deploy this project live using **Vercel** (for the Vite frontend) and **Render** (for the FastAPI backend), but encountered some configuration issues that prevented a successful live build.
@@ -108,4 +106,4 @@ SENDER_EMAIL=your_gmail@gmail.com
 *(Note: The system leverages Groq/Llama3 under the hood in its current iteration for maximum agent loop speed).*
 
 ## Documentation
-For more detailed information on the agentic loop, system prompts, and tool schemas, please refer to [DOCS.md](./DOCS.md).
+For more detailed information on the agentic loop, system prompts, and tool schemas, please refer to [DOCS.md](./firereach/DOCS.md).
