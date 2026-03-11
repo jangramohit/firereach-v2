@@ -1,3 +1,29 @@
+
+
+## Deployment
+
+I attempted to deploy this project live using **Vercel** (for the Vite frontend) and **Render** (for the FastAPI backend), but encountered some configuration issues that prevented a successful live build.
+
+_If you'd like to attempt deployment, you can try following standard Vite/FastAPI hosting guides for those platforms._
+
+### Screenshots / Images
+
+If you want to add images of the application running locally to this README, you can place your image files (e.g., `dashboard.png`) directly into this repository folder and embed them using the following format:
+
+### Screenshots
+
+**Dashboard Overview**
+![Dashboard View](./dashboard-1.png)
+
+**Company Discovery**
+![Company Discovery](./dashboard-2.png)
+
+**AI Generated Brief & Email**
+![AI Email Draft 1](./dashboard-email-1.png)
+
+**Outreach Email Sent**
+![AI Email Draft 2](./dashboard-email-2.png)
+
 # FireReach - Autonomous Outreach Engine
 
 FireReach is an autonomous AI Sales Development Representative (SDR) system. It takes a single prompt (an Ideal Customer Profile - ICP), discovers matching companies, captures real growth signals via web scraping, formulates strategic account briefs, and automatically sends personalized outreach emails.
@@ -67,22 +93,6 @@ FireReach is an autonomous AI Sales Development Representative (SDR) system. It 
    Access the dashboard at `http://localhost:5173`.
 
 ---
-
-## Deployment
-
-I attempted to deploy this project live using **Vercel** (for the Vite frontend) and **Render** (for the FastAPI backend), but encountered some configuration issues that prevented a successful live build.
-
-_If you'd like to attempt deployment, you can try following standard Vite/FastAPI hosting guides for those platforms._
-
-### Screenshots / Images
-
-If you want to add images of the application running locally to this README, you can place your image files (e.g., `dashboard.png`) directly into this repository folder and embed them using the following format:
-
-```markdown
-![Dashboard View](./dashboard.png)
-![Running Server](./server-log.jpg)
-```
-
 
 ## Environment Variables
 
