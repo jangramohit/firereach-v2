@@ -17,16 +17,26 @@ def tool_outreach_automated_sender(company: str, account_brief: str, signals_dat
     
     try:
         if isinstance(signals_data_json, dict):
-            signals_data = signals_data_json
+             parsed_data = signals_data_json
+        elif isinstance(signals_data_json, list):
+             parsed_data = signals_data_json
         elif isinstance(signals_data_json, str) and signals_data_json.strip():
-            signals_data = json.loads(signals_data_json)
+             try:
+                 parsed_data = json.loads(signals_data_json)
+             except json.JSONDecodeError:
+                 parsed_data = {}
         else:
-            signals_data = {}
+             parsed_data = {}
+             
+        if isinstance(parsed_data, list):
+            signals = parsed_data
+        elif isinstance(parsed_data, dict):
+            signals = parsed_data.get("signals", [])
+        else:
+            signals = []
     except Exception as e:
         logger.error(f"Failed to parse signals JSON: {e}")
-        signals_data = {}
-        
-    signals = signals_data.get("signals", [])
+        signals = []
     
     # Generate generic realistic email address if none provided for testing
     safe_domain = re.sub(r'[^a-zA-Z0-9]', '', company.lower()) + ".com"

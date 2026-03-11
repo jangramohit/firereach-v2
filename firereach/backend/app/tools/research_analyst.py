@@ -17,14 +17,25 @@ def tool_research_analyst(icp: str, company: str, signals_data_json: str) -> str
         return f"{company} recently raised funding and is scaling their infrastructure rapidly.\n\nRapid expansion introduces critical vulnerabilities. Cybersecurity training is necessary during this growth phase."
 
     try:
+        # The LLM sometimes hallucinates and passes a stringified list instead of a stringified dict
         if isinstance(signals_data_json, dict):
-             signals_data = signals_data_json
+             parsed_data = signals_data_json
+        elif isinstance(signals_data_json, list):
+             parsed_data = signals_data_json
         elif isinstance(signals_data_json, str) and signals_data_json.strip():
-             signals_data = json.loads(signals_data_json)
+             try:
+                 parsed_data = json.loads(signals_data_json)
+             except json.JSONDecodeError:
+                 parsed_data = {}
         else:
-             signals_data = {}
+             parsed_data = {}
              
-        signals = signals_data.get("signals", [])
+        if isinstance(parsed_data, list):
+            signals = parsed_data
+        elif isinstance(parsed_data, dict):
+            signals = parsed_data.get("signals", [])
+        else:
+            signals = []
         
         client = Groq(api_key=settings.GROQ_API_KEY)
         
