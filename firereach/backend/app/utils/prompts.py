@@ -50,17 +50,20 @@ Write an ultra-concise, highly personalized cold email utilizing the following s
 2. The Wedge (1 sentence): State the specific pain hypothesis from the Account Context that logically follows their recent signal.
 3. The Pivot (1 sentence): Position our solution (inferred from the ICP context) as the specific answer to that bottleneck.
 4. The Ask (1 sentence): A low-friction, interest-based Call to Action.
-5. The Sign-off: End the email strictly with "Best,\\nMohit". DO NOT use any other name.
+5. The Sign-off: End the email strictly with exactly this text: 
+"Best,
+
+Mohit"
 
 SUBJECT LINE RULES:
-The subject line MUST be 2-4 words maximum. It must be entirely lowercase. It must reference their company or a specific signal (e.g., "(company) + infrastructure" or "q3 growth"). Absolutely NO title-casing or exclamation points.
+The subject line MUST be exactly 2 to 4 words maximum. It must be entirely lowercase. It must reference their company or a specific signal (e.g., "(company) + infrastructure" or "q3 growth"). Absolutely NO title-casing or exclamation points.
 
 NON-NEGOTIABLE CONSTRAINTS:
+- Formatting: The email body MUST be structured beautifully with double paragraph breaks (using \\n\\n) between the Hook, the Wedge/Pivot, the Ask, and the Sign-off. It should NOT be a single wall of text.
 - Word Count Limit: The body must be exactly 4 to 5 sentences max. ABSOLUTELY NO LONGER.
 - Tone: Human, casual but highly professional, direct. Do not sound desperate or overly enthusiastic.
-- Banned Words: "Hope this finds you well", "I wanted to reach out", "synergy", "innovative", "we help companies".
-- Formatting: Output ONLY a valid JSON object with EXACTLY two string fields: "subject" and "body". Do not wrap in markdown block quotes (```json) or add explanations.
+- Output: ONLY a valid JSON object with EXACTLY two string fields: "subject" and "body". Do not wrap in markdown block quotes (```json) or add explanations.
 
 JSON SCHEMA REQUIREMENT:
-{{"subject": "a catchy lowercase short subject", "body": "The plain text body of the email with appropriate line breaks (\\n\\n) ending with Mohit"}}
+{{"subject": "a catchy lowercase short subject", "body": "The formatted text body of the email with appropriate line breaks (\\n\\n) ending with the exact Sign-off"}}
 """

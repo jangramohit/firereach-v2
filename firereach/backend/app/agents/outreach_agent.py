@@ -143,6 +143,12 @@ class OutreachAgent:
                                 "content": serializable_string_res,
                             })
                             
+                            # Force exit the agentic loop immediately once the email is sent 
+                            # to prevent duplicate sends from hallucinated extra loops.
+                            if fn_name == "tool_outreach_automated_sender":
+                                logger.info(f"[{company}] Email sent successfully. Terminating agent loop.")
+                                return result
+                                
                         except Exception as e:
                             logger.error(f"Tool {fn_name} failed: {e}")
                             return result
