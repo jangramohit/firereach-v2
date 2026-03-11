@@ -38,32 +38,30 @@ CONSTRAINTS:
 """
 
 EMAIL_GENERATOR_PROMPT = """
-Act as an elite top-performing Account Executive writing a cold email to a C-suite or VP decision-maker.
+Act as an elite top-performing Account Executive targeting Software Development Engineers and technical leaders.
 
 Target Company: {company}
-Account Context & Pain Hypothesis: {account_brief}
-Live Verifiable Signals: {signals}
+Account Context (ICP): {account_brief}
+Live Verifiable Signals (News/Hiring): {signals}
 
 INSTRUCTIONS & FRAMEWORK:
-Write an ultra-concise, highly personalized cold email utilizing the following structure:
-1. The Hook (1 sentence): Reference a specific, live signal from the provided data immediately to prove this isn't an automated blast.
-2. The Wedge (1 sentence): State the specific pain hypothesis from the Account Context that logically follows their recent signal.
-3. The Pivot (1 sentence): Position our solution (inferred from the ICP context) as the specific answer to that bottleneck.
-4. The Ask (1 sentence): A low-friction, interest-based Call to Action.
+Write a highly personalized cold email utilizing the following structure:
+1. Trigger: Acknowledge recent company news, hiring, or AI initiatives at their company.
+2. Problem: Highlight a specific challenge Software Development Engineers face related to that trigger.
+3. Value: Emphasize how our agentic AI and LLM applications can massively boost developer productivity and solve that problem.
+4. CTA: End with a short, soft call to action for a 15-minute meeting.
 5. The Sign-off: End the email strictly with exactly this text: 
 "Best,
 
 Mohit"
 
-SUBJECT LINE RULES:
-The subject line MUST be exactly 2 to 4 words maximum. It must be entirely lowercase. It must reference their company or a specific signal (e.g., "(company) + infrastructure" or "q3 growth"). Absolutely NO title-casing or exclamation points.
-
 NON-NEGOTIABLE CONSTRAINTS:
-- Formatting: The email body MUST be structured beautifully with double paragraph breaks (using \\n\\n) between the Hook, the Wedge/Pivot, the Ask, and the Sign-off. It should NOT be a single wall of text.
-- Word Count Limit: The body must be exactly 4 to 5 sentences max. ABSOLUTELY NO LONGER.
-- Tone: Human, casual but highly professional, direct. Do not sound desperate or overly enthusiastic.
+- Length: The email MUST be between 80 and 120 words. Not too short, not too long.
+- Formatting: The email body MUST be structured beautifully with double paragraph breaks (using \\n\\n) between the Trigger, Problem, Value, CTA, and Sign-off. 
+- Tone: Professional, highly technical, and deeply relevant to software engineering and LLMs. Avoid all spam words.
+- Note on Variations: Generate ONE absolute best, highly targeted variation so it can be sent instantly.
 - Output: ONLY a valid JSON object with EXACTLY two string fields: "subject" and "body". Do not wrap in markdown block quotes (```json) or add explanations.
 
 JSON SCHEMA REQUIREMENT:
-{{"subject": "a catchy lowercase short subject", "body": "The formatted text body of the email with appropriate line breaks (\\n\\n) ending with the exact Sign-off"}}
+{{"subject": "A compelling, natural subject line referencing their AI initiatives or engineering team", "body": "The formatted text body of the email with appropriate line breaks (\\n\\n) ending with the exact Sign-off"}}
 """
