@@ -39,13 +39,13 @@ FireReach is an autonomous AI Sales Development Representative (SDR) system. It 
 ## Features
 - **Autonomous Lead Generation:** Leverages DuckDuckGo search to find relevant companies based on your ICP.
 - **Signal Harvesting:** Scrapes real-time data and news to find contextual "growth signals" for personalization.
-- **AI-Powered Analysis:** Uses Google Gemini to generate strategic two-paragraph account briefs.
+- **AI-Powered Analysis:** Uses Groq and Llama 3 to generate strategic two-paragraph account briefs.
 - **Automated Outreach:** Drafts hyper-personalized emails and sends them automatically via SMTP.
 - **Modern Dashboard:** A sleek React/Vite frontend to monitor and trigger outbound campaigns.
 
 ## Architecture
 - **Frontend:** React, Vite, TailwindCSS
-- **Backend:** Python, FastAPI, Contextual AI Agents (Gemini)
+- **Backend:** Python, FastAPI, Contextual AI Agents (Groq/Llama3)
 - **Deployment:** Vercel (Frontend), Render (Backend)
 
 ---
@@ -68,7 +68,7 @@ FireReach is an autonomous AI Sales Development Representative (SDR) system. It 
    ```
 4. Configure Environment Variables:
    - Copy `.env.example` to `.env` (or create a `.env` file).
-   - Fill in your Gemini API Key and SMTP credentials (see [Environment Variables](#environment-variables)).
+   - Fill in your Groq API Key and SMTP credentials (see [Environment Variables](#environment-variables)).
 5. Run the server:
    ```bash
    uvicorn app.main:app --reload --host 0.0.0.0 --port 10000
@@ -107,7 +107,7 @@ SMTP_PASSWORD=your_gmail_app_password
 SENDER_EMAIL=your_gmail@gmail.com
 ```
 
-*(Note: While the variable is named GROQ_API_KEY, the system leverages Gemini under the hood in its current iteration).*
+*(Note: The system leverages Groq/Llama3 under the hood in its current iteration for maximum agent loop speed).*
 
 ## Documentation
 For more detailed information on the agentic loop, system prompts, and tool schemas, please refer to [DOCS.md](./DOCS.md).
